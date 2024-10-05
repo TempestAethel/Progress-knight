@@ -300,7 +300,6 @@ function getHappiness() {
 
 function toggleHappinessInput() {
     var inputField = document.getElementById("happinessInput");
-    var displayField = document.getElementById("happinessDisplay");
     
     // Toggle the input field
     if (inputField.style.display === "none") {
@@ -316,7 +315,7 @@ function toggleHappinessInput() {
 }
 
 function setHappinessMultiplier(value) { 
-     gameData.happinessMultiplier = value; // Assign new multiplier to gameData
+    gameData.happinessMultiplier = value; // Assign new multiplier to gameData
     updateHappinessDisplay();
 }
 
@@ -325,16 +324,14 @@ function updateHappinessDisplay() {
 }
 
 function getGameSpeed() {
-    var timeWarping = gameData.taskData["Time warping"]
-    var timeWarpingSpeed = gameData.timeWarpingEnabled ? timeWarping.getEffect() : 1
-    var gameSpeed = baseGameSpeed * +!gameData.paused * +isAlive() * timeWarpingSpeed
+    var timeWarping = gameData.taskData["Time warping"];
+    var timeWarpingSpeed = gameData.timeWarpingEnabled ? timeWarping.getEffect() : 1;
+    var gameSpeed = baseGameSpeed * +!gameData.paused * +isAlive() * timeWarpingSpeed;
     return gameSpeed * gameData.GameSpeedMultiplier; // Apply the multiplier
 }
 
-
 function toggleGameSpeedInput() {
     var inputField = document.getElementById("GameSpeedInput");
-    var displayField = document.getElementById("GameSpeedDisplay");
     
     // Toggle the input field
     if (inputField.style.display === "none") {
@@ -350,7 +347,7 @@ function toggleGameSpeedInput() {
 }
 
 function setGameSpeedMultiplier(value) { 
-     gameData.GameSpeedMultiplier = value; // Assign new multiplier to gameData
+    gameData.GameSpeedMultiplier = value; // Assign new multiplier to gameData
     updateGameSpeedDisplay();
 }
 
